@@ -1,0 +1,17 @@
+{
+    "description": "Site Celke",
+    "authors": [
+        {
+            "name": "Carlos Wagner",
+            "email": "carlos@cwrsdev.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core",
+            "App\\": "app",
+            "Sts\\": "app/sts"
+        }
+    },
+    "require": {}
+}

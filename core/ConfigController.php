@@ -18,7 +18,9 @@ class ConfigController extends Config
         /** @var string $urlParameter Recebe os parâmetros da URL */
         $urlParameter,
         /** @var string $urlSlugController Recebe a URL convertida em slug */
-        $urlSlugController;
+        $urlSlugController,
+        /** @var string $classLoad Recebe a classe a ser instanciada */
+        $classLoad;
 
     private array
         /** @var string $urlArray Recebe a URL convertida em array */
@@ -97,8 +99,22 @@ class ConfigController extends Config
      */
     public function loadPage(): void
     {
-        $classLoad = "\\Sts\\Controllers\\" . $this->urlController;
-        $classPage = new $classLoad();
-        $classPage->index();
+        $this->classLoad = "\\Sts\\Controllers\\" . $this->urlController;
+        if (class_exists($this->classLoad)) {
+            $this->loadClass();
+        } else {
+            $this->urlController = $this->slugController(CONTROLLERERRO);
+            $this->loadPage();
+        }
+    }
+
+    private function loadClass(): void
+    {
+        $classPage = new $this->classLoad();
+        if (method_exists($classPage, "index")) {
+            $classPage->index();
+        } else {
+            die("Erro: Tente novamente ou contacte o suporte: " . EMAILSUPORTE);
+        }
     }
 }

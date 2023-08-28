@@ -68,6 +68,22 @@ input[type=submit]{
     justify-content: space-between;
 }
 
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.h-half {
+    height: 50vh;
+}
+
 nav {
     position: fixed;
     background-color: rgb(0, 0, 0, 0.8);

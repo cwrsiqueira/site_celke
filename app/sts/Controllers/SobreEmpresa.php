@@ -3,6 +3,7 @@
 namespace Sts\Controllers;
 
 use Core\configView;
+use Sts\Models\StsSobreEmpresa;
 
 /**
  * Chamar página Sobre Empresa
@@ -18,7 +19,8 @@ class SobreEmpresa
      */
     public function index(): void
     {
-        $this->data = [];
+        $sobreEmpresa = new StsSobreEmpresa();
+        $this->data = $sobreEmpresa->index();
         $loadView = new configView("sts/Views/sobre-empresa/index", $this->data);
         $loadView->loadView();
     }

@@ -1,4 +1,6 @@
 <?php
+session_start(); // Iniciar sessão
+ob_start(); // Limpa o buffer de saída
 
 /** Chama o autoload do composer */
 require './vendor/autoload.php';

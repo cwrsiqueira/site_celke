@@ -1,18 +1,16 @@
 <?php
-
-use Sts\Models\helpers\HelpersFunctions;
-
-echo "View da página Home<br><br>";
-
 if (!empty($this->data[0])) {
     extract($this->data[0]);
-    echo "ID: $id <br>";
-    echo "Título: $title_top <br>";
-    echo "Descrição: $description_top <br>";
-    echo "Link do botão: $link_btn_top <br>";
-    echo "Texto do botão: $txt_btn_top <br>";
-    echo "Nome da Imagem: $image <br>";
-} else {
-    echo "<p style='color:orange;'>Alerta! Nenhum registro encontrado.</p>";
 }
-echo "<br><br>";
+?>
+<div class="container">
+    <h1>Página Home</h1>
+    <ul>
+        <li>ID: <?= $id; ?></li>
+        <li>Título: <?= $title_top; ?></li>
+        <li>Descrição: <?= $description_top; ?></li>
+        <li>Link do botão: <?= $link_btn_top; ?></li>
+        <li>Texto do botão: <?= $txt_btn_top; ?></li>
+        <li>Nome da Imagem: <?= $image; ?></li>
+    </ul>
+</div>

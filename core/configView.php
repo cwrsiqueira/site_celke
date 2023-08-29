@@ -33,6 +33,7 @@ class configView
     {
         if (file_exists('app/' . $this->nameView . '.php')) {
             require_once 'app/sts/Views/includes/header.php';
+            require_once 'app/sts/Views/includes/navbar.php';
             require_once 'app/' . $this->nameView . '.php';
             require_once 'app/sts/Views/includes/footer.php';
         } else {

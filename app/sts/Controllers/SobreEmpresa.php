@@ -3,6 +3,7 @@
 namespace Sts\Controllers;
 
 use Core\configView;
+use Sts\Models\StsFooter;
 use Sts\Models\StsSobreEmpresa;
 
 /**
@@ -20,7 +21,11 @@ class SobreEmpresa
     public function index(): void
     {
         $sobreEmpresa = new StsSobreEmpresa();
-        $this->data = $sobreEmpresa->index();
+        $this->data['sobre'] = $sobreEmpresa->index();
+
+        $footer = new StsFooter();
+        $this->data['footer'] = $footer->index();
+
         $loadView = new configView("sts/Views/sobre-empresa/index", $this->data);
         $loadView->loadView();
     }

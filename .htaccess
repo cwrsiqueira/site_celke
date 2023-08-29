@@ -30,6 +30,6 @@ ErrorDocument 403 http://localhost/site_celke/
 Options -Indexes
 
 # Bloquear acesso aos arquivos do diretório
-RewriteRule ^app/ - [F]
-RewriteRule ^core/ - [F]
-RewriteRule ^vendor/ - [F]
+# RewriteRule ^app/ - [F]
+# RewriteRule ^core/ - [F]
+# RewriteRule ^vendor/ - [F]

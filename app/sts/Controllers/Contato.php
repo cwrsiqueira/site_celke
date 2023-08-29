@@ -4,6 +4,7 @@ namespace Sts\Controllers;
 
 use Core\configView;
 use Sts\Models\StsContato;
+use Sts\Models\StsFooter;
 
 /**
  * Chamar a página Contato
@@ -49,6 +50,12 @@ class Contato
                 }
             }
         }
+
+        $contato = new StsContato();
+        $this->data['contact'] = $contato->index();
+
+        $footer = new StsFooter();
+        $this->data['footer'] = $footer->index();
 
         $loadView = new configView("sts/Views/contato/index", $this->data);
         $loadView->loadView();

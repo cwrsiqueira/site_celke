@@ -2,6 +2,7 @@
 
 namespace Sts\Models;
 
+use Sts\Models\helpers\HelpersFunctions;
 use Sts\Models\helpers\StsRead;
 
 /**
@@ -22,7 +23,7 @@ class StsSobreEmpresa
     {
         $viewSobre = new StsRead();
         // $viewSobre->execRead("sts_abouts_companies", "WHERE id = :id LIMIT :limit", "id=1&limit=1");
-        $viewSobre->fullRead("SELECT id, title, description, image FROM sts_abouts_companies WHERE sts_situation_id=:sts_situation_id LIMIT :limit", "sts_situation_id=1&limit=10");
+        $viewSobre->fullRead("SELECT id, about_title, about_desc, about_img FROM sts_abouts_companies WHERE sts_situation_id=:sts_situation_id LIMIT :limit", "sts_situation_id=1&limit=10");
 
         $this->data = $viewSobre->getResult();
 

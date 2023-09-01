@@ -16,8 +16,8 @@ abstract class Config
     protected function config(): void
     {
         // URL DO PROJETO
-        define('URL', 'http://localhost/site_celke/');
-        define('URLADM', 'http://localhost/site_celke/adm/');
+        define('URL', 'http://localhost/celke_site/');
+        define('URLADM', 'http://localhost/celke_adm/');
 
         define('CONTROLLER', 'Home');
         define('CONTROLLERERRO', 'Erro');
